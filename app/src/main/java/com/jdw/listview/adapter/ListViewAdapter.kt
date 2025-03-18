@@ -34,12 +34,15 @@ class ListViewAdapter(val list : MutableList<ListViewModel>): BaseAdapter() {
         }
 
         // 리스트에 내용 텍스트뷰에 적용
-        val title = converView!!.findViewById<TextView>(R.id.listviewItem)
-        title.text = list[position].content
+        val title = converView!!.findViewById<TextView>(R.id.listviewItem1)
+        title.text = list[position].title
+
+        val content = converView.findViewById<TextView>(R.id.listviewItem2)
+        content.text = list[position].content
 
 
 
         // 리스트뷰아이템이 담긴 객체 리턴
-        return converView!!
+        return converView
     }
 }
