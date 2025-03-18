@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.TextView
 import com.jdw.listview.R
 
 class ListViewAdapter(val list : MutableList<String>): BaseAdapter() {
@@ -31,6 +32,9 @@ class ListViewAdapter(val list : MutableList<String>): BaseAdapter() {
             converView = LayoutInflater.from(parent?.context).inflate(R.layout.listview_item, parent, false)
         }
 
+        // 리스트에 내용 텍스트뷰에 적용
+        val title = converView!!.findViewById<TextView>(R.id.listviewItem)
+        title.text = list[position]
 
 
 
