@@ -6,8 +6,9 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
 import com.jdw.listview.R
+import com.jdw.listview.viewModel.ListViewModel
 
-class ListViewAdapter(val list : MutableList<String>): BaseAdapter() {
+class ListViewAdapter(val list : MutableList<ListViewModel>): BaseAdapter() {
     override fun getCount(): Int {
         return list.size
     }
@@ -34,7 +35,7 @@ class ListViewAdapter(val list : MutableList<String>): BaseAdapter() {
 
         // 리스트에 내용 텍스트뷰에 적용
         val title = converView!!.findViewById<TextView>(R.id.listviewItem)
-        title.text = list[position]
+        title.text = list[position].content
 
 
 

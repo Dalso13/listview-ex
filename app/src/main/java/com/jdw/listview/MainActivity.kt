@@ -4,17 +4,18 @@ import android.os.Bundle
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 import com.jdw.listview.adapter.ListViewAdapter
+import com.jdw.listview.viewModel.ListViewModel
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val listItem = mutableListOf<String>(
-            "A",
-            "B",
-            "C"
-        )
+        val listItem = mutableListOf<ListViewModel>()
+
+        listItem.add(ListViewModel("a", "b"))
+        listItem.add(ListViewModel("c", "d"))
+        listItem.add(ListViewModel("e", "f"))
 
         // 어뎁터 생성 원하는 리스트 넣기
         val adapter = ListViewAdapter(listItem)
