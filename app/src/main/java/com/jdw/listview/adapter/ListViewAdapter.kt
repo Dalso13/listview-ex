@@ -1,0 +1,40 @@
+package com.jdw.listview.adapter
+
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.BaseAdapter
+import com.jdw.listview.R
+
+class ListViewAdapter(val list : MutableList<String>): BaseAdapter() {
+    override fun getCount(): Int {
+        return list.size
+    }
+
+    override fun getItem(position: Int): Any? {
+        return list[position]
+    }
+
+    override fun getItemId(position: Int): Long {
+        return position.toLong()
+    }
+
+    override fun getView(
+        position: Int,
+        convertView: View?,
+        parent: ViewGroup?
+    ): View? {
+        var converView = convertView
+
+        if (converView == null) {
+            // 리스트뷰 아이템 가져오기
+            converView = LayoutInflater.from(parent?.context).inflate(R.layout.listview_item, parent, false)
+        }
+
+
+
+
+        // 리스트뷰아이템이 담긴 객체 리턴
+        return converView!!
+    }
+}
